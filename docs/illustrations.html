@@ -1,12 +1,17 @@
 ---
 layout: default
 title: Illustrations
+description:
 ---
+
 <div class="d-flex align-content-start flex-wrap justify-content-around">
     {% for art in site.data.illustrations %}
+    {% capture num %}{% increment var %}{% endcapture %}
+    
+
     <div class="col-xl-4 col-lg-4 col-md-6 col-small-12 align-self-stretch">
 
-        <div class="modal fade" id="modal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+        <div class="modal fade" id="modal{{ num }}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
             aria-hidden="true">
             <div class="modal-dialog modal-lg" role="document">
                 <div class="modal-content">
@@ -32,8 +37,8 @@ title: Illustrations
             </div>
         </div>
 
-        <div class="no-gutters border rounded overflow-hidden mb-4 shadow-sm h-md-250">
-            <div class="col p-4 d-flex flex-column position-static">
+        <div class="no-gutters border rounded overflow-hidden mb-4 shadow-sm h-md-250" data-toggle="modal{{ num }}">
+            <div class="col d-flex flex-column position-static">
                 <img class="img-fluid" src="{{ art.preview }}" />
                 <!--
                     <h3 class="mb-0"><a href="{{ project.projecturl }}">{{ project.projectname }}</a></h3>
@@ -45,7 +50,6 @@ title: Illustrations
                 -->
             </div>
         </div>
-
     </div>
     {% endfor %}
 </div>
