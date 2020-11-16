@@ -15,16 +15,14 @@ description:
             <div class="modal-dialog modal-lg" role="document">
                 <div class="modal-content">
                     <div class="modal-body mb-0 p-0">
-                        {% if art.embed %}
-                            <div class="embed-responsive embed-responsive-16by9 z-depth-1-half">
+                        <div class="embed-responsive embed-responsive-16by9 z-depth-1-half">
+                            {% if art.embed != "" %}
                                 <iframe class="embed-responsive-item" src="{{ art.embed }}" allowfullscreen></iframe>
-                            </div>
-                        {% endif %}
-                        {% if art.image %}
-                            <div class="embed-responsive embed-responsive-16by9 z-depth-1-half text-center">
+                            {% endif %}
+                            {% if art.image != "" %}
                                 <img src="{{ art.image }}" class="rounded" />
-                            </div>
-                        {% endif %}
+                            {% endif %}
+                        </div>
                     </div>
                     <div class="modal-footer justify-content-center">
                         <span class="mr-4">{{ art.description }}</span>
