@@ -3,21 +3,29 @@ layout: default
 title: Typeography
 ---
 
-<div class="row">
-    <div class="col-lg-4 col-md-12 mb-4">
+
+<div class="d-flex align-content-start flex-wrap justify-content-around">
+    {% for art in site.data.typeography %}
+    <div class="col-xl-4 col-lg-4 col-md-6 col-small-12 align-self-stretch">
+
         <div class="modal fade" id="modal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
             aria-hidden="true">
             <div class="modal-dialog modal-lg" role="document">
                 <div class="modal-content">
                     <div class="modal-body mb-0 p-0">
-                        <div class="embed-responsive embed-responsive-16by9 z-depth-1-half">
-                            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/A3PDXmYoF5U"
-                                allowfullscreen></iframe>
-                        </div>
+                        {% if art.embed %}
+                            <div class="embed-responsive embed-responsive-16by9 z-depth-1-half">
+                                <iframe class="embed-responsive-item" src="{{ art.embed }}" allowfullscreen></iframe>
+                            </div>
+                        {% endif %}
+                        {% if art.image %}
+                            <div class="embed-responsive embed-responsive-16by9 z-depth-1-half text-center">
+                                <img src="{{ art.image }}" class="rounded" />
+                            </div>
+                        {% endif %}
                     </div>
-
                     <div class="modal-footer justify-content-center">
-                        <span class="mr-4">Spread the word!</span>
+                        <span class="mr-4">{{ art.description }}</span>
                         <button type="button" class="btn btn-outline-primary btn-rounded btn-md ml-4"
                             data-dismiss="modal">Close</button>
                     </div>
@@ -25,102 +33,22 @@ title: Typeography
 
             </div>
         </div>
-        <a><img class="img-fluid z-depth-1" src="https://mdbootstrap.com/img/screens/yt/screen-video-1.jpg" alt="video"
-                data-toggle="modal" data-target="#modal1"></a>
-    </div>
 
-    <div class="col-lg-4 col-md-6 mb-4">
-        <div class="modal fade" id="modal6" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-            aria-hidden="true">
-            <div class="modal-dialog modal-lg" role="document">
-                <div class="modal-content">
-                    <div class="modal-body mb-0 p-0">
-                        <div class="embed-responsive embed-responsive-16by9 z-depth-1-half">
-                            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/wTcNtgA6gHs"
-                                allowfullscreen></iframe>
-                        </div>
-                    </div>
-                    <div class="modal-footer justify-content-center">
-                        <span class="mr-4">Spread the word!</span>
-                        <button type="button" class="btn btn-outline-primary btn-rounded btn-md ml-4"
-                            data-dismiss="modal">Close</button>
-                    </div>
-                </div>
+        <div class="no-gutters border rounded overflow-hidden mb-4 shadow-sm h-md-250">
+            <div class="col p-4 d-flex flex-column position-static">
+                <img class="img-fluid" src="{{ art.preview }}" />
+                <!--
+                    <h3 class="mb-0"><a href="{{ project.projecturl }}">{{ project.projectname }}</a></h3>
+                    <div class="mb-1 text-muted"><a class="media-subheading"
+                            href="{{ project.creatorurl }}">{{ project.creatorname }}</a></div>
+                    <p class="card-text mb-auto">
+                        {{ project.description }}
+                    </p>
+                -->
             </div>
         </div>
-        <a><img class="img-fluid z-depth-1" src="https://mdbootstrap.com/img/screens/yt/screen-video-2.jpg" alt="video"
-                data-toggle="modal" data-target="#modal6"></a>
-    </div>
 
-    <div class="col-lg-4 col-md-6 mb-4">
-        <div class="modal fade" id="modal4" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-            aria-hidden="true">
-            <div class="modal-dialog modal-lg" role="document">
-                <div class="modal-content">
-                    <div class="modal-body mb-0 p-0">
-                        <div class="embed-responsive embed-responsive-16by9 z-depth-1-half">
-                            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/vlDzYIIOYmM"
-                                allowfullscreen></iframe>
-                        </div>
-                    </div>
-                    <div class="modal-footer justify-content-center">
-                        <span class="mr-4">Spread the word!</span>
-                        <button type="button" class="btn btn-outline-primary btn-rounded btn-md ml-4"
-                            data-dismiss="modal">Close</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <a><img class="img-fluid z-depth-1" src="https://mdbootstrap.com/img/screens/yt/screen-video-3.jpg" alt="video"
-                data-toggle="modal" data-target="#modal4"></a>
     </div>
+    {% endfor %}
 </div>
 
-<div class="row">
-    <div class="col-lg-4 col-md-12 mb-4">
-        <div class="modal fade" id="modal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-            aria-hidden="true">
-            <div class="modal-dialog modal-lg" role="document">
-                <div class="modal-content">
-                    <div class="modal-body mb-0 p-0">
-                        <div class="embed-responsive embed-responsive-16by9 z-depth-1-half">
-                            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/GUEZCxBcM78"
-                                allowfullscreen></iframe>
-                        </div>
-                    </div>
-                    <div class="modal-footer justify-content-center">
-                        <span class="mr-4">Spread the word!</span>
-                        <button type="button" class="btn btn-outline-primary btn-rounded btn-md ml-4"
-                            data-dismiss="modal">Close</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <a><img class="img-fluid z-depth-1" src="https://mdbootstrap.com/img/screens/yt/screen-video-4.jpg" alt="video"
-                data-toggle="modal" data-target="#modal2"></a>
-    </div>
-
-    <div class="col-lg-4 col-md-6 mb-4">
-        <div class="modal fade" id="modal5" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-            aria-hidden="true">
-            <div class="modal-dialog modal-lg" role="document">
-                <div class="modal-content">
-                    <div class="modal-body mb-0 p-0">
-                        <div class="embed-responsive embed-responsive-16by9 z-depth-1-half">
-                            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/PjGkVCAo8Fw"
-                                allowfullscreen></iframe>
-                        </div>
-                    </div>
-                    <div class="modal-footer justify-content-center">
-                        <span class="mr-4">Spread the word!</span>
-                        <button type="button" class="btn btn-outline-primary btn-rounded btn-md ml-4"
-                            data-dismiss="modal">Close</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <a><img class="img-fluid z-depth-1" src="https://mdbootstrap.com/img/screens/yt/screen-video-5.jpg" alt="video"
-                data-toggle="modal" data-target="#modal5"></a>
-    </div>
-
-</div>

@@ -1,0 +1,4 @@
+name: AkiMedia
+root: http://aki.media/
+permalink: /:categories/:title
+keep_files: [images, css, js]
